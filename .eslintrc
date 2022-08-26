@@ -1,0 +1,31 @@
+{
+	"extends": ["react-app"],
+	"plugins": ["react", "unused-imports", "import"],
+	"rules": {
+		"no-unused-vars": "off",
+		"no-dupe-keys": "warn",
+		"no-unused-expressions": "error",
+		"react-hooks/exhaustive-deps": "off",
+		"unused-imports/no-unused-imports": "error",
+		"unused-imports/no-unused-vars": "error",
+		"import/order": [
+			"error",
+			{
+				"groups": [["builtin", "external", "internal"]],
+				"pathGroups": [
+					{
+						"pattern": "react",
+						"group": "external",
+						"position": "before"
+					}
+				],
+				"pathGroupsExcludedImportTypes": ["react"],
+				"alphabetize": {
+					"order": "ignore",
+					"caseInsensitive": true
+				}
+			}
+		],
+		"jsx-a11y/anchor-is-valid": "off"
+	}
+}

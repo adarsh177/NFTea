@@ -1,0 +1,17 @@
+.error404page {
+	text-align: center;
+	color: var(--brandingbase);
+
+	img {
+		width: calc(25 * var(--standardspace));
+		max-width: 80vw;
+	}
+
+	p {
+		padding: var(--standardspace);
+		max-width: 80vw;
+		margin: auto;
+		color: var(--subtext);
+		font-size: calc(1.6 * var(--standardspace));
+	}
+}

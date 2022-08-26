@@ -1,0 +1,64 @@
+.mainheader {
+	width: 100vw;
+	height: var(--headersize);
+	margin: 0;
+	padding: 0 var(--hpadding);
+	background-color: var(--white);
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	box-shadow: var(--lightshadow);
+
+	a {
+		text-decoration: none;
+	}
+
+	&-left {
+		margin-right: var(--standardspace);
+		font-family: 'Advent Pro', 'Roboto', sans-serif;
+		font-size: calc(2 * var(--standardspace));
+		font-weight: bold;
+		color: var(--brandingbase);
+
+		&:hover {
+			color: var(--brandingbase);
+			transform: scale(1.01) rotateZ(-5deg);
+		}
+	}
+
+	&-right {
+		flex: 1;
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+
+		@media (max-width: 768px) {
+			display: none;
+		}
+	}
+
+	&-rightmobile {
+		flex: 1;
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+
+		@media (min-width: 768px) {
+			display: none;
+		}
+	}
+
+	&-mobilemenu {
+		transform-origin: 50% 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: stretch;
+		padding: var(--standardspace) var(--hpadding);
+		background-color: var(--lightgrey);
+
+		&-item {
+			margin-bottom: var(--standardspace) !important;
+		}
+	}
+}

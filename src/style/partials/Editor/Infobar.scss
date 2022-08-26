@@ -1,0 +1,48 @@
+.editor-infobar {
+	width: 100vw;
+	height: var(--editor-infobarsize);
+	margin: 0;
+	padding: 0 var(--editor-padding);
+	background-color: var(--editor-color-infobar);
+	color: var(--editor-color-infobar-text);
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	box-shadow: var(--lightshadow);
+	font-size: var(--standardspace);
+
+	a {
+		text-decoration: none;
+		color: var(--editor-color-infobar-text);
+	}
+
+	&-vr {
+		width: 1px;
+		height: 50%;
+		background-color: var(--editor-color-infobar-seperator);
+		margin: 0 var(--standardspace);
+	}
+
+	&-icon {
+		font-size: calc(1.6 * var(--standardspace)) !important;
+	}
+
+	&-left {
+		height: 100%;
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: center;
+		position: relative;
+	}
+
+	&-right {
+		height: 100%;
+		flex: 1;
+		display: flex;
+		flex-direction: row-reverse;
+		justify-content: flex-start;
+		align-items: center;
+		position: relative;
+	}
+}

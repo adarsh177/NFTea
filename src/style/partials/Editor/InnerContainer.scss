@@ -1,0 +1,9 @@
+.editor-innercontainer {
+	width: 100%;
+	height: calc(100vh - var(--editor-headersize) - var(--editor-infobarsize));
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: stretch;
+	position: relative;
+}

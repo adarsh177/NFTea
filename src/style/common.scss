@@ -1,0 +1,53 @@
+* {
+	box-sizing: border-box;
+	font-display: swap;
+}
+
+html {
+	@media screen {
+		overflow-x: hidden;
+	}
+}
+
+body {
+	display: block;
+	line-height: 1.61;
+	max-width: 100%;
+	min-width: 100%;
+	color: var(--black);
+	background: var(--white);
+	font-family: 'Roboto', sans-serif !important;
+	font-size: var(--extraspacing);
+	position: relative;
+	overflow-y: auto;
+
+	@media screen {
+		overflow-x: hidden;
+	}
+}
+
+button {
+	outline: none !important;
+}
+
+#root {
+	position: relative;
+}
+
+.fullbody {
+	width: 100vw;
+	min-height: calc(100vh - var(--headersize));
+	background-color: var(--white);
+	display: block;
+	overflow-x: hidden;
+	padding: var(--standardspace) var(--hpadding);
+}
+
+.form-control {
+	color: var(--black);
+	margin-bottom: calc(1.5 * var(--standardspace)) !important;
+
+	&:focus {
+		color: var(--black);
+	}
+}

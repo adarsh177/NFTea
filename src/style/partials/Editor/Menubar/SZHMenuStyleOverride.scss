@@ -1,0 +1,16 @@
+@import '../../../variables/variables.scss';
+@import '../Variables.scss';
+
+.szh-menu {
+	font-family: 'Roboto', sans-serif;
+	font-size: calc(1.2 * var(--standardspace));
+
+	&__item {
+		padding: calc(0.5 * var(--standardspace)) calc(1 * var(--standardspace));
+
+		&--hover {
+			color: #fff;
+			background-color: var(--brandingbase);
+		}
+	}
+}

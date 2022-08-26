@@ -1,0 +1,26 @@
+:root {
+	// Sizes
+	--editor-headersize: 48px;
+	--editor-infobarsize: 30px;
+	--editor-padding: 1.2em;
+	--editor-window-headersize: 28px;
+	--editor-window-radius: calc(var(--standardspace) / 3);
+	--editor-window-minsize: 200px;
+	--editor-toolbar-width: 64px;
+	--editor-toolbar-tool-size: 25px;
+
+	// Colors
+	--editor-color-menulabel: rgb(65, 65, 65);
+	--editor-color-seperator: rgba(201, 201, 201, 0.584);
+	--editor-color-infobar: var(--brandingbase);
+	--editor-color-infobar-seperator: rgba(192, 192, 192, 0.708);
+	--editor-color-infobar-text: rgb(241, 241, 241);
+	--editor-color-workspace-bg: #e7e7e7;
+	--editor-color-window-background: rgb(255, 255, 255);
+	--editor-color-window-header-bg: var(--brandingbase);
+	--editor-color-window-header-font: rgb(243, 243, 243);
+	--editor-color-window-border: rgb(177, 177, 177);
+	--editor-color-toolbar-background: #fff;
+	--editor-color-multiutilitypanel-background: #fff;
+	--editor-color-multiutilitypanel-handle: rgb(227, 227, 227);
+}

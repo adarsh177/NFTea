@@ -1,0 +1,30 @@
+:root {
+	// Using CSS Variables since we can adjust these colours using javascript based on developer later.
+	// SCSS Simply replaces values during compilation, CSS Variables let it stay.
+	--primarycolor: #554994;
+	--brandingbase: #554994;
+	--brandingsecondary: #ffccb3;
+	--brandingbasetint: #5549943c;
+	--white: #ffffff;
+	--black: #313131;
+	--lightgrey: #f5f5f5;
+
+	// Text Colors
+	--subtext: #696969;
+	--error: rgb(148, 10, 10);
+	--errortint: rgb(148, 10, 10, 0.12);
+
+	// Spacing
+	--standardspace: 0.75em;
+	--headersize: 68px;
+	--hpadding: 1.6em;
+
+	// Box Shadows
+	--lightshadow: 0 1px 2px 0.25px rgba(0, 0, 0, 0.08), 0 1px 3px 0.25px rgba(0, 0, 0, 0.16);
+	--standardshadow: 0 1px 2px 0.25px rgba(0, 0, 0, 0.12), 0 1px 3px 0.25px rgba(0, 0, 0, 0.24);
+	--longershadow: 0 5px 10px 0.25px rgba(0, 0, 0, 0.12), 0 5px 15px 0.25px rgba(0, 0, 0, 0.24);
+	--wideshadow: 0 5px 20px rgba(50, 50, 93, 0.1);
+	--funkyshadow: 0 2px 5px 0px rgba(50, 50, 93, 0.1);
+	--materialshadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+		0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+}

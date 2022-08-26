@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Toaster } from 'react-hot-toast';
+import { useSelector } from 'react-redux';
+import { Routes, Route } from 'react-router-dom';
+import Error404Page from './app/components/containers/Error404Page';
+import LandingPage from './app/components/containers/LandingPage';
+import AlertModal from './app/components/reusable/modals/AlertModal';
+import ConfirmModal from './app/components/reusable/modals/ConfirmModal';
+import Loading from './app/components/reusable/others/Loading';
+import MainHeader from './app/components/reusable/others/MainHeader';
+import useAlert from './app/hooks/useAlert';
+import useConfirm from './app/hooks/useConfirm';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+	const showLoader = useSelector((state) => state.showLoader);
+	const showHeader = useSelector((state) => state.showHeader);
+	const [showAlert, closeAlert] = useAlert();
+	const [showConfirm, closeConfirm] = useConfirm();
+
+	return (
+		<React.Fragment>
+			{/* Overlay Elements */}
+			{showLoader ? <Loading /> : null}
+			{showAlert ? <AlertModal text={showAlert} close={closeAlert} /> : null}
+			{showConfirm ? <ConfirmModal text={showConfirm} close={closeConfirm} /> : null}
+			{showHeader ? <MainHeader /> : null}
+			<Toaster />
+
+			{/* Router */}
+			<Routes>
+				<Route path="/" element={<LandingPage />} />
+				<Route path="*" element={<Error404Page />} />
+			</Routes>
+		</React.Fragment>
+	);
+};
 
 export default App;
