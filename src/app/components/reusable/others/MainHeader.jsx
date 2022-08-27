@@ -39,14 +39,14 @@ const MainHeader = () => {
 					</Link>
 					&nbsp;&nbsp;
 					<Link to="/">
-						<Button variant="outlined">
+						<Button variant="contained">
 							SDK
 							<OpenInNew />
 						</Button>
 					</Link>
 					&nbsp;&nbsp;
 					<Link to="/docs">
-						<Button variant="outlined">View Docs</Button>
+						<Button variant="contained">View Docs</Button>
 					</Link>
 					&nbsp;&nbsp;
 					{!isAuth() ? (
@@ -94,39 +94,36 @@ const MainHeader = () => {
 					</Link>
 					&nbsp;&nbsp;
 					<Link to="/">
-						<Button variant="outlined">
+						<Button variant="contained">
 							SDK
 							<OpenInNew />
 						</Button>
 					</Link>
 					&nbsp;&nbsp;
 					<Link to="/docs">
-						<Button variant="outlined">View Docs</Button>
+						<Button variant="contained">View Docs</Button>
 					</Link>
-					&nbsp;&nbsp;
 					{!isAuth() ? (
 						<>
+							&nbsp;&nbsp;
 							<Link to="/login">
-								&nbsp;&nbsp;
 								<Button variant="contained" color="success">
 									Login
 								</Button>
 							</Link>
-							&nbsp; &nbsp;
 						</>
 					) : (
 						<>
+							&nbsp;&nbsp;
 							<Link to="/dashboard" className="mainheaderLink">
 								<Button variant="contained">DashBoard</Button>
 							</Link>
 							&nbsp;&nbsp;
 							<Link to="/">
-								&nbsp;&nbsp;
 								<Button variant="contained" color="success" onClick={Logout}>
 									Logout
 								</Button>
 							</Link>
-							&nbsp; &nbsp;
 						</>
 					)}
 				</motion.div>
