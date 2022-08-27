@@ -30,10 +30,12 @@ const MainHeader = () => {
 					<Link to="/docs">
 						<Button variant="outlined">View Docs</Button>
 					</Link>
-					&nbsp;&nbsp;
-					<Button variant="contained" color="success">
-						Login
-					</Button>
+					<Link to="/login">
+						&nbsp;&nbsp;
+						<Button variant="contained" color="success">
+							Login
+						</Button>
+					</Link>
 					&nbsp; &nbsp;
 				</div>
 				<div className="mainheader-rightmobile">

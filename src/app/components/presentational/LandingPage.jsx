@@ -60,7 +60,7 @@ const LandingPageUI = () => {
 					</div>
 				</div>
 
-				<div className="customSection">
+				<div className="customSection" id="about">
 					<div className="container">
 						<div className="row justify-content-center">
 							<div className="col-lg-6 text-center">
