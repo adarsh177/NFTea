@@ -5,7 +5,7 @@ import Close from '@mui/icons-material/Close';
 import OpenInNew from '@mui/icons-material/OpenInNew';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-
+import './style.css';
 const MainHeader = () => {
 	const [expandMenu, setExpandMenu] = React.useState(false);
 
@@ -16,9 +16,14 @@ const MainHeader = () => {
 					NFTea
 				</a>
 				<div className="mainheader-right">
+					<Link to="/#about" className="mainheaderLink">
+						<Button variant="contained">About</Button>
+					</Link>
+					&nbsp;&nbsp;
 					<Link to="/">
 						<Button variant="outlined">
-							SDK &nbsp; <OpenInNew />
+							SDK
+							<OpenInNew />
 						</Button>
 					</Link>
 					&nbsp;&nbsp;
@@ -26,7 +31,10 @@ const MainHeader = () => {
 						<Button variant="outlined">View Docs</Button>
 					</Link>
 					&nbsp;&nbsp;
-					<Button variant="contained">Login</Button>
+					<Button variant="contained" color="success">
+						Login
+					</Button>
+					&nbsp; &nbsp;
 				</div>
 				<div className="mainheader-rightmobile">
 					<IconButton onClick={() => setExpandMenu((v) => !v)} size="small">
