@@ -10,11 +10,22 @@ const MainHeader = () => {
 	const [expandMenu, setExpandMenu] = React.useState(false);
 	// checking for authentication
 	const isAuth = () => {
-		return localStorage.getItem('isAuth');
+		return window.localStorage.getItem('isAuth') !== null;
 	};
 	useEffect(() => {
 		isAuth();
 	});
+
+	async function Logout() {
+		try {
+			window.localStorage.removeItem('isAuth');
+			window.location.href = '/';
+			return true;
+		} catch (error) {
+			console.log(error);
+			return false;
+		}
+	}
 
 	return (
 		<React.Fragment>
@@ -37,7 +48,8 @@ const MainHeader = () => {
 					<Link to="/docs">
 						<Button variant="outlined">View Docs</Button>
 					</Link>
-					{!isAuth ? (
+					&nbsp;&nbsp;
+					{!isAuth() ? (
 						<>
 							<Link to="/login">
 								&nbsp;&nbsp;
@@ -48,7 +60,19 @@ const MainHeader = () => {
 							&nbsp; &nbsp;
 						</>
 					) : (
-						<></>
+						<>
+							<Link to="/dashboard" className="mainheaderLink">
+								<Button variant="contained">DashBoard</Button>
+							</Link>
+							&nbsp;&nbsp;
+							<Link to="/">
+								&nbsp;&nbsp;
+								<Button variant="contained" color="success" onClick={Logout}>
+									Logout
+								</Button>
+							</Link>
+							&nbsp; &nbsp;
+						</>
 					)}
 				</div>
 				<div className="mainheader-rightmobile">
@@ -65,15 +89,46 @@ const MainHeader = () => {
 					animate={{ scaleY: 1 }}
 					className="mainheader-mobilemenu"
 				>
-					<Button variant="outlined" className="mainheader-mobilemenu-item">
-						SDK &nbsp; <OpenInNew />
-					</Button>
-					<Button variant="outlined" className="mainheader-mobilemenu-item">
-						View Docs
-					</Button>
-					<Button variant="contained" className="mainheader-mobilemenu-item">
-						Login
-					</Button>
+					<Link to="/#about" className="mainheaderLink">
+						<Button variant="contained">About</Button>
+					</Link>
+					&nbsp;&nbsp;
+					<Link to="/">
+						<Button variant="outlined">
+							SDK
+							<OpenInNew />
+						</Button>
+					</Link>
+					&nbsp;&nbsp;
+					<Link to="/docs">
+						<Button variant="outlined">View Docs</Button>
+					</Link>
+					&nbsp;&nbsp;
+					{!isAuth() ? (
+						<>
+							<Link to="/login">
+								&nbsp;&nbsp;
+								<Button variant="contained" color="success">
+									Login
+								</Button>
+							</Link>
+							&nbsp; &nbsp;
+						</>
+					) : (
+						<>
+							<Link to="/dashboard" className="mainheaderLink">
+								<Button variant="contained">DashBoard</Button>
+							</Link>
+							&nbsp;&nbsp;
+							<Link to="/">
+								&nbsp;&nbsp;
+								<Button variant="contained" color="success" onClick={Logout}>
+									Logout
+								</Button>
+							</Link>
+							&nbsp; &nbsp;
+						</>
+					)}
 				</motion.div>
 			) : null}
 		</React.Fragment>
