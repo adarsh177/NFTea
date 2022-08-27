@@ -9,6 +9,9 @@
 	animation: AnimationName 8s ease infinite;
 }
 
+.mainheader-left {
+	color: white !important;
+}
 @-webkit-keyframes AnimationName {
 	0% {
 		background-position: 0% 50%;
