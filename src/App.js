@@ -6,6 +6,7 @@ import Error404Page from './app/components/containers/Error404Page';
 import LandingPage from './app/components/containers/LandingPage';
 import Login from './app/components/containers/Login';
 import Test from './app/components/containers/Test'
+import Dashboard from './app/components/containers/Dashboard';
 import AlertModal from './app/components/reusable/modals/AlertModal';
 import ConfirmModal from './app/components/reusable/modals/ConfirmModal';
 import Loading from './app/components/reusable/others/Loading';
@@ -34,6 +35,7 @@ const App = () => {
 				<Route path="/" element={<LandingPage />} />
 				<Route path="*" element={<Error404Page />} />
 				<Route path="/login" element={<Login />} />
+				<Route path="/dashboard" element={<Dashboard />} />
 			</Routes>
 		</React.Fragment>
 	);

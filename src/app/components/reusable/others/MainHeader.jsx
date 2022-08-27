@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Button, IconButton } from '@mui/material';
 import Menu from '@mui/icons-material/Menu';
 import Close from '@mui/icons-material/Close';
@@ -8,6 +8,13 @@ import { Link } from 'react-router-dom';
 import './style.css';
 const MainHeader = () => {
 	const [expandMenu, setExpandMenu] = React.useState(false);
+	// checking for authentication
+	const isAuth = () => {
+		return localStorage.getItem('isAuth');
+	};
+	useEffect(() => {
+		isAuth();
+	});
 
 	return (
 		<React.Fragment>
@@ -30,13 +37,19 @@ const MainHeader = () => {
 					<Link to="/docs">
 						<Button variant="outlined">View Docs</Button>
 					</Link>
-					<Link to="/login">
-						&nbsp;&nbsp;
-						<Button variant="contained" color="success">
-							Login
-						</Button>
-					</Link>
-					&nbsp; &nbsp;
+					{!isAuth ? (
+						<>
+							<Link to="/login">
+								&nbsp;&nbsp;
+								<Button variant="contained" color="success">
+									Login
+								</Button>
+							</Link>
+							&nbsp; &nbsp;
+						</>
+					) : (
+						<></>
+					)}
 				</div>
 				<div className="mainheader-rightmobile">
 					<IconButton onClick={() => setExpandMenu((v) => !v)} size="small">

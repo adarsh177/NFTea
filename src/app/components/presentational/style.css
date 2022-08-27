@@ -99,4 +99,12 @@ h4 {
 .loginPage {
 	height: 90vh;
 	padding-top: 15vh;
+	background: linear-gradient(284deg, #0042ff, #d5e19d);
+	background-size: 400% 400%;
+
+	-webkit-animation: AnimationName 8s ease infinite;
+	-moz-animation: AnimationName 8s ease infinite;
+	animation: AnimationName 8s ease infinite;
 }
+
+/* Dashboard */

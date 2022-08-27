@@ -4,10 +4,11 @@ const LoginUI = () => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		window.location.href = '/dashboard';
+		window.localStorage.setItem('isAuth', true);
 	};
 	return (
 		<React.Fragment>
-			<div className="loginPage buildSection">
+			<div className="loginPage">
 				<div className="row justify-content-center">
 					<div className="col-lg-6 text-center">
 						<div className="w-full max-w-md m-auto bg-white rounded-lg border border-primaryBorder shadow-default py-10 px-16">
