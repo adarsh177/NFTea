@@ -3,11 +3,23 @@ import { Button, IconButton } from '@mui/material';
 import Menu from '@mui/icons-material/Menu';
 import Close from '@mui/icons-material/Close';
 import OpenInNew from '@mui/icons-material/OpenInNew';
+import Web3 from 'web3';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+// import { getUserWalletAddress } from 'nftea-sdk/base/frontend';
 import './style.css';
 const MainHeader = () => {
 	const [expandMenu, setExpandMenu] = React.useState(false);
+
+	const getUserWalletAddress = async (callback) => {
+		if (window.ethereum) {
+			const w3 = new Web3(window.ethereum);
+			console.log(w3.eth);
+		} else {
+			callback('No wallet found');
+			return null;
+		}
+	};
 
 	return (
 		<React.Fragment>
@@ -32,8 +44,12 @@ const MainHeader = () => {
 					</Link>
 					<Link to="/login">
 						&nbsp;&nbsp;
-						<Button variant="contained" color="success">
-							Login
+						<Button
+							variant="contained"
+							color="success"
+							onClick={() => getUserWalletAddress(() => {})}
+						>
+							Login with Wallet
 						</Button>
 					</Link>
 					&nbsp; &nbsp;
